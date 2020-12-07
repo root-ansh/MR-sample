@@ -14,7 +14,7 @@ most of the py3 syntax works for py2, but gives slightly different output, which
 """
 
 #==============global vars===============================
-apk_path = "app/build/outputs/apk/debug/apkname.apk" #apk path relative to monkeyrunner location( which runs from project root)
+apk_path = "app/build/outputs/apk/debug/apkname.apk" #apk path relative to monkeyrunner location( which runs from project root). generate via built/generate apk
 package_name = "work.curioustools.monkey_runner"
 activities_path = package_name + "/" + package_name
 
@@ -47,50 +47,7 @@ def select_device(wait_time):
     print ("[MR]:connected to device id:",device_id)
     return device
 
-"""
-apk_path = device.shell('pm path com.manning.aip.dealdroid')
-if apk_path.startswith('package:'):
-    print "DealDroid already installed."
-else:
-    print "DealDroid not installed, installing APKs..."
-    device.installPackage('../DealDroid/bin/DealDroid.apk')
-print "Starting DealDroid..."
-device.startActivity(component='com.manning.aip.dealdroid/.DealList')
-MonkeyRunner.sleep(7)
-Listing D.1 A simple monkeyrunner script
-Import
-classes
-B
-Enumerate
-devices
-C
-Connect
-selected device
-D
-Install
-application
-E
-Start
-application F
-Scripting monkeyrunner 605
-device.touch(100, 450, 'DOWN_AND_UP')
-MonkeyRunner.sleep(2)
-device.touch(100, 250, 'DOWN_AND_UP')
-MonkeyRunner.sleep(2)
-device.touch(100, 150, 'DOWN_AND_UP')
-MonkeyRunner.sleep(2)
-device.press('KEYCODE_MENU', 'DOWN_AND_UP', None)
-MonkeyRunner.sleep(1)
-device.touch(280, 450, 'DOWN_AND_UP')
-MonkeyRunner.sleep(2)
-device.type("555-13456")
-MonkeyRunner.sleep(2)
-device.press('KEYCODE_BACK', 'DOWN_AND_UP', None)
-MonkeyRunner.sleep(1)
-device.press('KEYCODE_BACK', 'DOWN_AND_UP', None)
-MonkeyRunner.sleep(1)
-device.press('KEYCODE_BACK', 'DOWN_AND_UP', None)
-"""
+
 
 
 def install_or_nothing_on_device(device):
